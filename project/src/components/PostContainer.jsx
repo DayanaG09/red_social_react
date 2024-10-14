@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchPostsThunk } from '../redux/postSlice';
+import { fetchCommentsThunk } from '../redux/commentSlice';
 import Post from './Post';
 
 const PostContainer = () => {
@@ -10,12 +11,14 @@ const PostContainer = () => {
   const postStatus = useSelector((state) => state.posts.status);
   const currentPage = useSelector((state) => state.posts.currentPage);
   const hasMore = useSelector((state) => state.posts.hasMore);
+  const comments = useSelector((state) => state.comments.comments);
 
   const [loadingMore, setLoadingMore] = useState(false);
 
   useEffect(() => {
     if (postStatus === 'idle') {
       dispatch(fetchPostsThunk(1));
+      dispatch(fetchCommentsThunk())
     }
   }, [postStatus, dispatch]);
 
@@ -47,14 +50,18 @@ const PostContainer = () => {
 
   return (
     <div>
-      {posts.map((post) => (
-        <Post key={post.id} post={post} comments={[]} />
-      ))}
-
+      {posts.map((post) => {
+          const postComments = comments.filter (comment => comment.postId === post.id ) ;
+          return (
+            <Post key={post.id} post={post} comments={postComments}/>
+          );
+  })}
+      
       {loadingMore && <div>Loading more posts...</div>}
       {!hasMore && <div>No more posts to load</div>}
     </div>
-  );
-};
+    );
+  };
+ 
 
 export default PostContainer;
