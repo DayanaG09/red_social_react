@@ -1,10 +1,11 @@
 /* Estilo principal del post */
 .post {
-  background-color: #ffffff;
+  background-color: #f8f3ee;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   padding: 20px;
-  margin: 20px 0;
+  margin: 20px auto;
+  max-width: 800px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease-in-out;
 }
@@ -13,64 +14,15 @@
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Título del post */
 .post h2 {
   font-size: 1.8rem;
   color: #333;
   margin-bottom: 10px;
 }
 
-/* Texto del post */
 .post p {
   font-size: 1rem;
   color: #555;
   line-height: 1.6;
 }
 
-/* Estilo de los comentarios */
-.comments-section {
-  margin-top: 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  padding: 15px;
-  border: 1px solid #ddd;
-}
-
-.comments-section h3 {
-  font-size: 1.4rem;
-  color: #444;
-  margin-bottom: 10px;
-}
-
-/* Estilo de cada comentario */
-.comment {
-  background-color: #fff;
-  padding: 10px;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  border: 1px solid #e0e0e0;
-}
-
-.comment p {
-  font-size: 0.95rem;
-  color: #333;
-}
-
-/* Estilo del nombre en los comentarios */
-.comment strong {
-  color: #007bff;
-}
-
-/* Link para mostrar/ocultar comentarios */
-.post p[style] {
-  color: #007bff;
-  font-weight: bold;
-  font-size: 1rem;
-  cursor: pointer;
-  margin-top: 10px;
-  display: inline-block;
-}
-
-.post p[style]:hover {
-  text-decoration: underline;
-}

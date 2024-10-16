@@ -1,21 +1,24 @@
-/* Íconos de Like y Share */
-.post-icons {
+.icon {
+  width: 50px;
+  height: auto;
+}
+
+.icons-container {
+  margin-top: 10px;
   display: flex;
-  gap: 10px;
-  margin: 15px 0;
+  justify-content: center;
 }
 
-.post-icons button {
-  background-color: #007bff;
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  font-size: 0.9rem;
-  border-radius: 5px;
+.icon-button {
+  width: 35px;
+  height: auto;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  margin-right: 15px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: grayscale(100%);
 }
 
-.post-icons button:hover {
-  background-color: #0056b3;
+.icon-button:hover {
+  transform: scale(1.1);
+  filter: grayscale(0%);
 }
