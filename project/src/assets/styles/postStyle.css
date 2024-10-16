@@ -26,3 +26,10 @@
   line-height: 1.6;
 }
 
+.post-icons{
+
+  display: flex;          
+  gap: 15px;        
+  margin-bottom: 20px;
+  justify-content: space-between; 
+}

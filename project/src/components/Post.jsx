@@ -1,8 +1,10 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
-import '../assets/styles/postStyle.css'
-import '../assets/styles/buttonStyle.css'
+import commentIcon from '../assets/images/comentar.png';
+import likeIcon from '../assets/images/corazon.png';      
+import shareIcon from '../assets/images/compartir.png'; 
+import '../assets/styles/style.css'
 
 const Post = ({ post, comments }) => {
   const [showComments, setShowComments] = useState(false);
@@ -15,19 +17,22 @@ const Post = ({ post, comments }) => {
     <div className="post">
       <h2>{post.title}</h2>
       <p>{post.body}</p>
-
       <div className="post-icons">
-        <button>👍 Like</button>
-        <button>🔁 Share</button>
+        <button>
+          <img src={likeIcon} alt="Like" className="icon" />Love
+        </button>
+        <button>
+          <img src={shareIcon} alt="Share" className="icon" />Share
+        </button>
+      
+
+      <button onClick={handleToggleComments} className="comment-button">
+        <img src={commentIcon} alt="Comment" className="icon" />Comentarios ({comments.length})
+      </button>
       </div>
-
-      <p onClick={handleToggleComments} style={{ cursor: 'pointer', color: 'blue' }}>
-        Comentarios ({comments.length})
-      </p>
-
       {showComments && (
         <div className="comments-section">
-          <h3>Comentarios</h3>
+          <h3>Comentarios...</h3>
           {comments.map((comment) => (
             <div key={comment.id} className="comment">
               <p>

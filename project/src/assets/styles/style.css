@@ -49,4 +49,9 @@ body {
    margin-right: 310px;
   }
   
-  
+  .icon{
+
+    width: 32px; 
+    height: 32px;
+    margin-right: 12px;
+  }

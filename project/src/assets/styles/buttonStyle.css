@@ -1,26 +1,31 @@
 /*Estilos para los botones*/
 .icon {
-  width: 50px;
-  height: auto;
+  width: 15px;  
+  height: 20px;
+  margin-right: 10px; 
 }
 
-.icons-container {
-  margin-top: 10px;
+.post-icons {
+  display: flex;  
+  gap: 15px;      
+  margin-bottom: 20px;
+  justify-content: space-evenly;  
+  margin-top: 30px;
+}
+
+
+button {
   display: flex;
+  align-items: center;
   justify-content: center;
-}
-
-.icon-button {
-  width: 35px;
-  height: auto;
+  padding: 10px 20px;  
+  background: linear-gradient(135deg, #d0ebcc, #6aa84f); 
+  border-radius: 30px;  
+  color: white;  
+  font-size: 16px;
+  box-shadow: 0 3px ;  
   cursor: pointer;
-  margin-right: 15px;
-  transition: transform 0.3s ease, filter 0.3s ease;
-  filter: grayscale(100%);
+  border:none;
+  font-size: 12px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
-
-.icon-button:hover {
-  transform: scale(1.1);
-  filter: grayscale(0%);
-}
-
